@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>God First Barbershop — Book Now</title>
+    <style>
+        :root {
+            --bg: #f7f7f8;
+            --accent: #0b72b9;
+            --muted: #666;
+            --card: #fff;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Inter, system-ui, Arial, sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: #111;
+        }
+        header {
+            background: linear-gradient(90deg, #ffffff, #f0f4f8);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .brand img {
+            height: 46px;
+        }
+        nav a {
+            margin-left: 14px;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 15px;
+        }
+        .hero {
+            max-width: 1000px;
+            margin: 36px auto;
+            padding: 28px;
+            background: var(--card);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(12, 15, 20, 0.06);
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 24px;
+        }
+        .hero h1 {
+            margin: 0 0 12px;
+            font-size: 28px;
+        }
+        .hero p {
+            color: var(--muted);
+            margin: 0 0 18px;
+        }
+        .cta {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .btn.secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        .card {
+            background: #fff;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(12, 15, 20, 0.04);
+        }
+        .service {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        .service:last-child {
+            border-bottom: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="logo.png" alt="God First Logo">
+            <div>
+                <strong>God First Barbershop</strong><br>
+                <span style="color:var(--muted);font-size:13px">Fresh cuts • Book online</span>
+            </div>
+        </div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#book">Book</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div>
+            <h1>Look sharp today — book an appointment</h1>
+            <p>Fast, clean cuts by experienced barbers. Walk-ins welcome or reserve your preferred time online.</p>
+            <div class="cta">
+                <a class="btn" href="#book">Book Now</a>
+                <a class="btn secondary" href="#services">View Services</a>
+            </div>
+
+            <section style="margin-top:20px">
+                <h3 id="services">Our Services</h3>
+                <div class="card" style="margin-top:10px">
+                    <div class="service">
+                        <div>
+                            <strong>Standard Cut</strong><br>
+                            <small style="color:var(--muted)">30 mins — R120</small>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div>
+                            <strong>Beard Trim</strong><br>
+                            <small style="color:var(--muted)">20 mins — R80</small>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div>
+                            <strong>Kid's Cut</strong><br>
+                            <small style="color:var(--muted)">25 mins — R90</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside>
+            <div class="card" id="book">
+                <h4>Reserve a time</h4>
+                <p style="color:var(--muted);margin-top:4px">Select a time and confirm with WhatsApp.</p>
+                <form onsubmit="event.preventDefault(); alert('Pretend booking sent to WhatsApp')">
+                    <label style="display:block;margin-top:8px">Name</label>
+                    <input required style="width:100%;padding:8px;border-radius:6px;border:1px solid #e6e9ee">
+                    <label style="display:block;margin-top:8px">Phone</label>
+                    <input required style="width:100%;padding:8px;border-radius:6px;border:1px solid #e6e9ee">
+                    <label style="display:block;margin-top:8px">Preferred time</label>
+                    <input type="datetime-local" style="width:100%;padding:8px;border-radius:6px;border:1px solid #e6e9ee">
+                    <div style="margin-top:12px;display:flex;gap:8px">
+                        <button class="btn" onclick="sendWhats()">Confirm</button>
+                        <a class="btn secondary" href="tel:+27831234567">Call</a>
+                    </div>
+                </form>
+                <script>
+                    function sendWhats() {
+                        alert('Open WhatsApp link or copy message: Booking request sent.');
+                    }
+                </script>
+            </div>
+
+            <div class="card" style="margin-top:12px">
+                <strong>Contact</strong>
+                <p style="color:var(--muted);margin:6px 0">
+                    WhatsApp: +27 83 123 4567<br>
+                    Address: 123 Main St.
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        © God First Barbershop — Built by [Your Name] • <a href="mailto:you@example.com">you@example.com</a>
+    </footer>
+</body>
+</html>
